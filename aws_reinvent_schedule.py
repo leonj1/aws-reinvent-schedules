@@ -12,6 +12,7 @@ class AWSReinventSchedule:
         self.base_url = "https://registration.awsevents.com/flow/awsevents/reinvent24/public/page/catalog"
         self.schedule = []
         self.session = requests.Session()
+        self.session_types = []
         
         # Set up logging
         logging.basicConfig(
@@ -23,6 +24,28 @@ class AWSReinventSchedule:
 
     def get_url(self, page=1):
         return f"{self.base_url}?search.topic=1707430256139001EhRR&trk=www.google.com&page={page}"
+
+    def get_session_types(self):
+        self.logger.info("Fetching session types...")
+        try:
+            response = self.session.get(self.base_url)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Find the session type dropdown
+            dropdown = soup.find('select', {'name': 'search.sessiontype'})
+            
+            if dropdown:
+                # Extract all option values except the first one (which is usually "All" or empty)
+                self.session_types = [option['value'] for option in dropdown.find_all('option')[1:]]
+                self.logger.info(f"Found {len(self.session_types)} session types")
+            else:
+                self.logger.warning("Session type dropdown not found")
+            
+        except requests.RequestException as e:
+            self.logger.error(f"Error fetching session types: {e}")
+        
+        return self.session_types
 
     def fetch_schedule(self):
         self.logger.info(f"Fetching AWS re:Invent {self.year} schedule...")
@@ -86,6 +109,14 @@ class AWSReinventSchedule:
 
 def main():
     downloader = AWSReinventSchedule(2024)
+    
+    # Fetch and print session types
+    session_types = downloader.get_session_types()
+    print("Session Types:")
+    for session_type in session_types:
+        print(f"- {session_type}")
+    
+    # Fetch and save schedule as before
     downloader.fetch_schedule()
     downloader.save_schedule()
 
