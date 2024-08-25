@@ -10,16 +10,33 @@ class AWSReinventSchedule:
         self.schedule = []
 
     def fetch_schedule(self):
-        # This method will be implemented when we know how to fetch the schedule
         print(f"Fetching AWS re:Invent {self.year} schedule...")
-        # Placeholder for actual implementation
-        pass
+        try:
+            response = requests.get(self.base_url)
+            response.raise_for_status()
+            self.parse_schedule(response.text)
+        except requests.RequestException as e:
+            print(f"Error fetching schedule: {e}")
 
     def parse_schedule(self, raw_data):
-        # This method will be implemented when we know the data format
         print("Parsing schedule data...")
-        # Placeholder for actual implementation
-        pass
+        soup = BeautifulSoup(raw_data, 'html.parser')
+        
+        # This is a hypothetical structure. Adjust based on actual HTML structure
+        sessions = soup.find_all('div', class_='session')
+        
+        for session in sessions:
+            title = session.find('h2', class_='session-title').text.strip()
+            time = session.find('span', class_='session-time').text.strip()
+            speaker = session.find('span', class_='session-speaker').text.strip()
+            description = session.find('p', class_='session-description').text.strip()
+            
+            self.schedule.append({
+                'title': title,
+                'time': time,
+                'speaker': speaker,
+                'description': description
+            })
 
     def save_schedule(self, filename=None):
         if not filename:
