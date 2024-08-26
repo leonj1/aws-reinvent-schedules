@@ -1,0 +1,62 @@
+[
+  {
+    "Position": "1",
+    "Session Type": "Chalk talk",
+    "Topic": "Architecture",
+    "Area of Interest": "Application Integration",
+    "Level": "200 – Intermediate",
+    "Role": "",
+    "Service": "",
+    "Description": "When you’re architecting workloads, you have a choice of over 200 AWS services. However, it doesn’t have to be overwhelming to pick the right services for your architecture. By defining your workload in terms of the capabilities required by your system, a combination of functional and nonfunctional requirements, you can simplify your choices. By defining your system’s important differentiating characteristics, you will find yourself naturally aligning the right AWS services to the capabilities required by your system. In this chalk talk, learn how to organize your system by capabilities and discover the architectural characteristics to pick the right services for those capabilities."
+  },
+  {
+    "Position": "2",
+    "Session Type": "Chalk talk",
+    "Topic": "Serverless Compute & Containers",
+    "Area of Interest": "Application Integration",
+    "Level": "300 – Advanced",
+    "Role": "IT Professional / Technical Manager",
+    "Service": "Amazon EventBridge",
+    "Description": "Event-driven architectures are experiencing a renaissance. While getting started is not difficult, builders may encounter challenges on their journeys. Domain-driven design is a tool that can help, but many developers are unfamiliar with how to get started. In this chalk talk, learn about a general framework that uses domain-driven design to think through, design, and build cloud-native event-driven architectures."
+  },
+  {
+    "Position": "3",
+    "Session Type": "Chalk talk",
+    "Topic": "Architecture",
+    "Area of Interest": "Application Integration",
+    "Level": "300 – Advanced",
+    "Role": "Data Engineer",
+    "Service": "Amazon Managed Streaming for Apache Kafka (Amazon MSK)",
+    "Description": "In today’s fast-paced business environment, timely insights from data are crucial for organizations to maintain a competitive edge and respond effectively to dynamic market and customer demands. This chalk talk explores the transformative shift from traditional batch processing to stream processing, enabling real-time data-driven decision-making. Gain insights into key streaming concepts, architectural patterns, potential challenges, and best practices for a seamless migration journey. Through a compelling use case demonstrating the benefits of transitioning to real-time data processing with AWS streaming services, you can acquire a roadmap for embracing stream processing and unlocking agility, responsiveness, and competitive advantage."
+  },
+  {
+    "Position": "4",
+    "Session Type": "Chalk talk",
+    "Topic": "Security, Compliance & Identity",
+    "Area of Interest": "Application Security",
+    "Level": "300 – Advanced",
+    "Role": "IT Professional / Technical Manager",
+    "Service": "Amazon Simple Storage Service (Amazon S3)",
+    "Description": "Amazon S3 security settings and access controls are suitable for virtually any workload. In this chalk talk, equip yourself with proven patterns for managing access at scale. Learn how to optimize policy usage, scale beyond AWS Identity and Access Management (IAM) policy limits, and secure your data lake perimeter."
+  },
+  {
+    "Position": "5",
+    "Session Type": "Chalk talk",
+    "Topic": "Databases",
+    "Area of Interest": "Well-Architected Framework",
+    "Level": "400 – Expert",
+    "Role": "IT Professional / Technical Manager",
+    "Service": "Amazon DocumentDB (with MongoDB compatibility)",
+    "Description": "As a fully managed database service for native document data model enterprise workloads, Amazon DocumentDB (with MongoDB compatibility) removes the undifferentiated heavy lifting of operating a database so that you can focus your time on delivering value for your customers. In this chalk talk, dive deep into implementation trade-offs, including compression, performance, and cost, for various workloads. Learn how to architect a scalable Amazon DocumentDB–based solution using elastic clusters and other key features."
+  },
+  {
+    "Position": "6",
+    "Session Type": "Chalk talk",
+    "Topic": "Networking",
+    "Area of Interest": "Global Infrastructure",
+    "Level": "300 – Advanced",
+    "Role": "Developer / Engineer",
+    "Service": "Amazon Virtual Private Cloud (Amazon VPC)",
+    "Description": "This chalk talk covers the breadth of AWS networking services. Are you facing challenges figuring out how you can optimize Elastic Load Balancing (ELB), where Amazon VPC Lattice fits in to your architecture, how you can migrate to AWS PrivateLink, how you should implement AWS Verified Access, whether you should migrate from AWS Transit Gateway to AWS Cloud WAN, or any other networking topic? Bring your questions to explore in detail through interactive conversations and whiteboarding."
+  }
+]
