@@ -1,0 +1,12 @@
+{
+  "name": "aws-reinvent-2024-catalog",
+  "version": "1.0.0",
+  "description": "Frontend for AWS Re:Invent 2024 Catalog",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
